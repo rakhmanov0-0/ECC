@@ -3,6 +3,15 @@
     "chrome-devtools": {
       "command": "npx",
       "args": ["-y", "chrome-devtools-mcp@1.10.1"]
+    },
+    "postgres": {
+      "command": "uvx",
+      "args": [
+        "--with", "mcp<2",
+        "postgres-mcp==0.3.0",
+        "--access-mode=restricted",
+        "${DATABASE_URI:-postgresql://postgres:postgres@localhost:5432/postgres}"
+      ]
     }
   }
 }
